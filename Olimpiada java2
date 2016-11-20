@@ -1,0 +1,81 @@
+package olimp2;
+import java.util.*;
+/**
+ *
+ * @author KiBB
+ */
+public class Olimp2 {
+    public void kv(int a,int b, String pixel){
+        for(int i=0;i<a;i++){
+            for(int j=0;j<b;j++){
+                System.out.print(pixel);
+            }
+        System.out.println();
+        }
+    }
+    public void tr1(int b, String pixel){
+        for(int i=0;i<b;i++){
+            for(int j=0;j<i+1;j++){
+                System.out.print(pixel);
+            }
+        System.out.println();
+        }
+    }
+     public void tr2(int b, String pixel){
+        for(int i=0;i<b;i++){
+            for(int j=b;j>0+i;j--){
+                System.out.print(pixel);
+            }
+        System.out.println();
+        }
+    }
+     public void tr3(int b, String pixel){
+        for(int i=0;i<b;i++){
+            for(int j=0;j<b;j++){
+                if(b-j>i+1)
+                    System.out.print(" ");
+                else
+                    System.out.print(pixel);
+            }
+        System.out.println();
+        }
+    }
+     public void tr4(int b, String pixel){
+        for(int i=0;i<b;i++){
+            for(int j=0;j<b;j++){
+                if(i>j)
+                    System.out.print(" ");
+                else
+                    System.out.print(pixel);
+            }
+        System.out.println();
+        }
+    }
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+       Scanner in=new Scanner(System.in);
+       Olimp2 jv=new Olimp2();
+       int a=0,b=0;
+       String pixel;
+       System.out.print("Длинна по вертикали? :");
+       a=in.nextInt();
+       System.out.print("Длинна по горизонтали? :");
+       b=in.nextInt();
+       // Для отрисовки треугольника используется только длинна по горизонтали,
+       // Так как он квадратный и с двумя параметрами рисовать будет трапецию.
+       System.out.print("Символ отрисовки? :");
+       pixel=in.next();
+       System.out.println("Отрисовка квадрата:");
+       jv.kv(a, b, pixel);
+       System.out.println("Отрисовка треугольника");
+       jv.tr1(b, pixel);
+       System.out.println("Отрисовка треугольника");
+       jv.tr2(b, pixel);
+       System.out.println("Отрисовка треугольника");
+       jv.tr3(b, pixel);
+       System.out.println("Отрисовка треугольника");
+       jv.tr4(b, pixel);
+    }  
+}
